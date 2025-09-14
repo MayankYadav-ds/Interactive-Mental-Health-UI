@@ -1,2 +1,11 @@
-# Interactive-Mental-Health-UI
-The Interactive Mental Health UI is a calming, user-friendly space with mood tracking, guided breathing, journaling, and an empathetic AI companion. Featuring soothing visuals, micro-animations, and community support, it adapts to emotions, promoting reflection, relaxation, and well-being.
+
+  # Interactive Mental Health UI
+
+  This is a code bundle for Interactive Mental Health UI. The original project is available at https://www.figma.com/design/nD8uYRvV0u3XgIA43fSpXy/Interactive-Mental-Health-UI.
+
+  ## Running the code
+
+  Run `npm i` to install the dependencies.
+
+  Run `npm run dev` to start the development server.
+  
