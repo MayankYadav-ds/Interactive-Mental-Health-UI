@@ -54,7 +54,7 @@ export function Dashboard({ onSectionChange, userData }: DashboardProps) {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-28 pb-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950 dark:via-indigo-950/50 dark:to-purple-950/50 bg-pattern-dots gradient-mesh pt-28 pb-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Welcome Section */}
         <motion.div
@@ -73,13 +73,13 @@ export function Dashboard({ onSectionChange, userData }: DashboardProps) {
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+              <Badge variant="outline" className="bg-green-50 dark:bg-green-950/50 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800">
                 <Award className="w-3 h-3 mr-1" />
                 7-day streak
               </Badge>
               <Button 
                 variant="outline" 
-                className="bg-white hover:bg-white/80"
+                className="bg-white dark:bg-card hover:bg-white/80 dark:hover:bg-card/80"
                 onClick={() => onSectionChange('crisis')}
               >
                 <AlertCircle className="w-4 h-4 mr-2 text-red-500" />
@@ -102,7 +102,7 @@ export function Dashboard({ onSectionChange, userData }: DashboardProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              <Card className="bg-white border-0 shadow-sm hover:shadow-md transition-all duration-300">
+              <Card className="bg-white dark:bg-card border-0 dark:border shadow-sm hover:shadow-md transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
@@ -125,7 +125,7 @@ export function Dashboard({ onSectionChange, userData }: DashboardProps) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="bg-white border-0 shadow-sm">
+              <Card className="bg-white dark:bg-card border-0 dark:border shadow-sm">
                 <CardHeader>
                   <CardTitle>Quick Actions</CardTitle>
                 </CardHeader>
@@ -142,7 +142,7 @@ export function Dashboard({ onSectionChange, userData }: DashboardProps) {
                       >
                         <Button
                           variant="outline"
-                          className="h-24 flex flex-col items-center justify-center space-y-2 bg-white hover:bg-gray-50"
+                          className="h-24 flex flex-col items-center justify-center space-y-2 bg-white dark:bg-card hover:bg-gray-50 dark:hover:bg-accent"
                           onClick={action.action}
                         >
                           <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${action.color} flex items-center justify-center`}>
@@ -166,7 +166,7 @@ export function Dashboard({ onSectionChange, userData }: DashboardProps) {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mt-6"
             >
-              <Card className="bg-white border-0 shadow-sm">
+              <Card className="bg-white dark:bg-card border-0 dark:border shadow-sm">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <TrendingUp className="w-5 h-5" />
@@ -226,11 +226,11 @@ export function Dashboard({ onSectionChange, userData }: DashboardProps) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <Card className="bg-white border-0 shadow-sm">
+              <Card className="bg-white dark:bg-card border-0 dark:border shadow-sm">
                 <CardContent className="p-6">
                   <div className="text-center space-y-3">
-                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
-                      <Activity className="w-5 h-5 text-purple-600" />
+                    <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center mx-auto">
+                      <Activity className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                     </div>
                     <div>
                       <h3 className="font-semibold">Wellness Tip</h3>
