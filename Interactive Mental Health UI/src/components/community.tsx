@@ -150,7 +150,7 @@ export function Community() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20 pt-24 pb-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 dark:from-purple-950 dark:via-pink-950/50 dark:to-rose-950/50 bg-pattern-dots gradient-mesh pt-28 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -158,7 +158,7 @@ export function Community() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent mb-2">
             Community Support
           </h1>
           <p className="text-muted-foreground">
@@ -175,7 +175,7 @@ export function Community() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-white/60 dark:bg-card/60 backdrop-blur-sm border-0 dark:border shadow-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Plus className="w-5 h-5" />
@@ -187,7 +187,7 @@ export function Community() {
                     placeholder="What's on your mind? Share your thoughts, ask for advice, or offer support..."
                     value={newPostContent}
                     onChange={(e) => setNewPostContent(e.target.value)}
-                    className="min-h-[100px] bg-white/80"
+                    className="min-h-[100px] bg-white/80 dark:bg-input"
                   />
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -200,7 +200,7 @@ export function Community() {
                     <Button 
                       onClick={createPost}
                       disabled={!newPostContent.trim()}
-                      className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
+                      className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 dark:from-purple-600 dark:to-pink-600 dark:hover:from-purple-700 dark:hover:to-pink-700"
                     >
                       <Plus className="w-4 h-4 mr-2" />
                       Post
@@ -223,7 +223,7 @@ export function Community() {
                   placeholder="Search posts..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 bg-white/80"
+                  className="pl-10 bg-white/80 dark:bg-input"
                 />
               </div>
               <div className="flex gap-2 overflow-x-auto pb-2">
@@ -235,8 +235,8 @@ export function Community() {
                     onClick={() => setSelectedCategory(category.id)}
                     className={`whitespace-nowrap ${
                       selectedCategory === category.id
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500'
-                        : 'bg-white/80 hover:bg-white'
+                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-600 dark:to-pink-600'
+                        : 'bg-white/80 hover:bg-white dark:bg-secondary/60 dark:hover:bg-secondary'
                     }`}
                   >
                     {category.label}
@@ -257,8 +257,8 @@ export function Community() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                 >
-                  <Card className={`bg-white/60 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                    post.isPinned ? 'ring-2 ring-yellow-200' : ''
+                  <Card className={`bg-white/60 dark:bg-card/60 backdrop-blur-sm border-0 dark:border shadow-lg hover:shadow-xl transition-all duration-300 ${
+                    post.isPinned ? 'ring-2 ring-yellow-200 dark:ring-yellow-600/50' : ''
                   }`}>
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
@@ -282,7 +282,7 @@ export function Community() {
                               </Badge>
                             )}
                             {post.isPinned && (
-                              <Badge variant="outline" className="text-xs bg-yellow-50 text-yellow-700 border-yellow-200">
+                              <Badge variant="outline" className="text-xs bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-600/50">
                                 Pinned
                               </Badge>
                             )}
@@ -360,7 +360,7 @@ export function Community() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-white/60 dark:bg-card/60 backdrop-blur-sm border-0 dark:border shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-lg">Support Groups</CardTitle>
                 </CardHeader>
@@ -368,7 +368,7 @@ export function Community() {
                   {supportGroups.map((group, index) => (
                     <div
                       key={group.id}
-                      className="p-4 rounded-lg bg-muted/50 hover:bg-muted/70 transition-colors cursor-pointer"
+                      className="p-4 rounded-lg bg-muted/50 hover:bg-muted/70 dark:bg-muted/30 dark:hover:bg-muted/50 transition-colors cursor-pointer"
                     >
                       <div className="flex items-start gap-3">
                         <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${group.color} flex items-center justify-center`}>
@@ -379,13 +379,13 @@ export function Community() {
                           <p className="text-xs text-muted-foreground mb-2">{group.description}</p>
                           <div className="flex items-center justify-between">
                             <span className="text-xs text-muted-foreground">{group.members} members</span>
-                            <span className="text-xs text-green-600">{group.recentActivity}</span>
+                            <span className="text-xs text-green-600 dark:text-green-400">{group.recentActivity}</span>
                           </div>
                         </div>
                       </div>
                     </div>
                   ))}
-                  <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
+                  <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 dark:from-purple-600 dark:to-pink-600 dark:hover:from-purple-700 dark:hover:to-pink-700">
                     Browse All Groups
                   </Button>
                 </CardContent>
@@ -398,14 +398,14 @@ export function Community() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              <Card className="bg-blue-50 border-blue-200 shadow-lg">
+              <Card className="bg-blue-50 dark:bg-blue-950/50 border-blue-200 dark:border-blue-800 shadow-lg">
                 <CardContent className="p-4">
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-blue-600" />
-                      <span className="text-sm font-medium text-blue-800">Community Guidelines</span>
+                      <span className="text-sm font-medium text-blue-800 dark:text-blue-200">Community Guidelines</span>
                     </div>
-                    <ul className="text-xs text-blue-700 space-y-1">
+                    <ul className="text-xs text-blue-700 dark:text-blue-300 space-y-1">
                       <li>• Be respectful and supportive</li>
                       <li>• No medical advice - seek professionals</li>
                       <li>• Respect privacy and anonymity</li>
@@ -422,17 +422,17 @@ export function Community() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
-              <Card className="bg-red-50 border-red-200 shadow-lg">
+              <Card className="bg-red-50 dark:bg-red-950/50 border-red-200 dark:border-red-800 shadow-lg">
                 <CardContent className="p-4">
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 text-red-600" />
-                      <span className="text-sm font-medium text-red-800">Need Immediate Help?</span>
+                      <span className="text-sm font-medium text-red-800 dark:text-red-200">Need Immediate Help?</span>
                     </div>
-                    <p className="text-xs text-red-700">
+                    <p className="text-xs text-red-700 dark:text-red-300">
                       If you're in crisis, please contact emergency services or a mental health professional immediately.
                     </p>
-                    <Button size="sm" variant="outline" className="w-full border-red-200 text-red-700 hover:bg-red-100">
+                    <Button size="sm" variant="outline" className="w-full border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 hover:bg-red-100 dark:hover:bg-red-900/20">
                       Crisis Resources
                     </Button>
                   </div>
