@@ -123,7 +123,7 @@ export function AIChatbot() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-teal-900/20 pt-24 pb-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 dark:from-blue-950 dark:via-cyan-950/50 dark:to-teal-950/50 bg-pattern-grid gradient-mesh pt-28 pb-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -131,7 +131,7 @@ export function AIChatbot() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent mb-2">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 dark:from-blue-400 dark:to-teal-400 bg-clip-text text-transparent mb-2">
             AI Mental Health Support
           </h1>
           <p className="text-muted-foreground">
@@ -147,7 +147,7 @@ export function AIChatbot() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-lg h-[600px] flex flex-col">
+              <Card className="bg-white/60 dark:bg-card/60 backdrop-blur-sm border-0 dark:border shadow-lg h-[600px] flex flex-col">
                 <CardHeader className="flex-shrink-0">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -191,8 +191,8 @@ export function AIChatbot() {
                           <div
                             className={`p-3 rounded-2xl ${
                               message.type === 'user'
-                                ? 'bg-gradient-to-r from-blue-500 to-teal-500 text-white ml-auto'
-                                : 'bg-white shadow-sm border'
+                                ? 'bg-gradient-to-r from-blue-500 to-teal-500 dark:from-blue-600 dark:to-teal-600 text-white ml-auto'
+                                : 'bg-white dark:bg-card shadow-sm border dark:border-border'
                             }`}
                           >
                             <p className="text-sm leading-relaxed">{message.content}</p>
@@ -206,7 +206,7 @@ export function AIChatbot() {
                                   variant="outline"
                                   size="sm"
                                   onClick={() => sendMessage(suggestion)}
-                                  className="text-xs bg-white/80 hover:bg-white"
+                                  className="text-xs bg-white/80 dark:bg-secondary/60 hover:bg-white dark:hover:bg-secondary"
                                 >
                                   {suggestion}
                                 </Button>
@@ -240,7 +240,7 @@ export function AIChatbot() {
                             <Bot className="w-4 h-4 text-white" />
                           </AvatarFallback>
                         </Avatar>
-                        <div className="bg-white shadow-sm border p-3 rounded-2xl">
+                        <div className="bg-white dark:bg-card shadow-sm border dark:border-border p-3 rounded-2xl">
                           <div className="flex space-x-1">
                             <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                             <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -253,14 +253,14 @@ export function AIChatbot() {
                   </div>
 
                   {/* Input */}
-                  <div className="p-4 border-t bg-white/50">
+                  <div className="p-4 border-t dark:border-border bg-white/50 dark:bg-card/50">
                     <div className="flex gap-2">
                       <Input
                         placeholder="Type your message..."
                         value={inputMessage}
                         onChange={(e) => setInputMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && sendMessage(inputMessage)}
-                        className="flex-1 bg-white"
+                        className="flex-1 bg-white dark:bg-input"
                       />
                       <Button
                         onClick={() => sendMessage(inputMessage)}
