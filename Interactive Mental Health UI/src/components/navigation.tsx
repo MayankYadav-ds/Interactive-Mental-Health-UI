@@ -15,7 +15,8 @@ import {
   Moon,
   Sun,
   Menu,
-  X
+  X,
+  FileText
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -37,6 +38,7 @@ export function Navigation({ activeSection, onSectionChange, userRole, userData,
     { id: 'chatbot', label: 'AI Chat', icon: Bot },
     { id: 'resources', label: 'Resources', icon: BookOpen },
     { id: 'community', label: 'Community', icon: Users },
+    { id: 'reports', label: 'Reports', icon: FileText },
     { id: 'crisis', label: 'Crisis', icon: AlertTriangle },
   ]
 
@@ -44,6 +46,7 @@ export function Navigation({ activeSection, onSectionChange, userRole, userData,
     { id: 'dashboard', label: 'Dashboard', icon: Home },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
     { id: 'students', label: 'Students', icon: Users },
+    { id: 'reports', label: 'Reports', icon: FileText },
     { id: 'crisis', label: 'Crisis', icon: AlertTriangle },
     { id: 'resources', label: 'Resources', icon: BookOpen },
   ]
